@@ -1,0 +1,36 @@
+# College Event and Workshop Management System
+
+events = []
+
+def add_event():
+    name = input("Enter Event/Workshop Name: ")
+    date = input("Enter Date: ")
+    organizer = input("Enter Organizer Name: ")
+    events.append([name, date, organizer])
+    print("Event Added Successfully!\n")
+
+def view_events():
+    if not events:
+        print("No Events Available\n")
+    else:
+        print("\nList of Events:")
+        for i, e in enumerate(events, start=1):
+            print(i, e[0], "-", e[1], "-", e[2])
+        print()
+
+while True:
+    print("1. Add Event")
+    print("2. View Events")
+    print("3. Exit")
+    
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        add_event()
+    elif choice == "2":
+        view_events()
+    elif choice == "3":
+        print("Thank You!")
+        break
+    else:
+        print("Invalid Choice\n")
